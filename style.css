@@ -27,6 +27,9 @@ body{
 }
 
 #butA{
+    appearance: none;
+    position: absolute;
+    background-color: aliceblue;
     border-radius: 20px;
     border: solid 2px greenyellow;
     color: greenyellow;
