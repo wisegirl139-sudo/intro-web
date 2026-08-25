@@ -26,3 +26,9 @@ body{
     padding: 15px;
 }
 
+#butA{
+    border-radius: 20px;
+    border: solid 2px greenyellow;
+    color: greenyellow;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
