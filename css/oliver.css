@@ -13,11 +13,47 @@
 }
 
 
-#Os_page {
+body {
     background: var(--bg);
     color: var(--text);
     font-family: "JetBrains Mono", monospace;
     line-height: 1.7;
+}
+
+.scanLines {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.035;
+    overflow: hidden;
+}
+
+.scanLines::before {
+    content: "";
+    position: absolute;
+    inset: -50% 0;
+
+    background: repeating-linear-gradient(
+        180deg,
+        transparent 0px,
+        transparent 3px,
+        #fff 3px,
+        #fff 4px
+    );
+
+    animation: scanLinesMove 4s linear infinite;
+    will-change: transform;
+}
+
+@keyframes scanLinesMove {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 4px, 0);
+    }
 }
 
 .intro {
