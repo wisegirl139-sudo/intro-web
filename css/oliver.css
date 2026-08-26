@@ -38,8 +38,8 @@ body {
         180deg,
         transparent 0px,
         transparent 3px,
-        #fff 3px,
-        #fff 4px
+        #ffffff 3px,
+        #ffffff 4px
     );
 
     animation: scanLinesMove 4s linear infinite;
@@ -55,6 +55,60 @@ body {
         transform: translate3d(0, 4px, 0);
     }
 }
+
+.topbar {
+    height: 70px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    position: sticky;
+    top: 0;
+    background: rgba(11, 14, 12, 0.94);
+    backdrop-filter: blur(10px);
+    z-index: 50;
+}
+
+.logo {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.led {
+    display:  inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    margin-right: 9px;
+    box-shadow: 0, 0, 12px var(--green);
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 45% {
+        opacity: 1;
+    }
+    50%, 55% {
+        opacity: 0.35;
+    }
+    60%, 100% {
+        opacity: 1;
+    }
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
 
 .intro {
     min-height: 700px;
