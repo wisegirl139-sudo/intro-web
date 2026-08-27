@@ -31,3 +31,23 @@ main{
     max-width: 900px;
     margin: auto;
 }
+
+main h5{
+    color: #6EA8FF;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+main p{
+    color: #E8E9F2;
+    margin-bottom: 40px;
+}
+
+.down{
+    border-color:#292D48;
+    border-style: solid;
+    background-color:  #0D1020;
+    border-radius: 50px;
+    padding: 15px 20px;
+    margin: 20px;
+}
