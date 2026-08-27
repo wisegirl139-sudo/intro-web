@@ -245,12 +245,14 @@ body {
     --led-color: #ecb22e;
     background: var(--led-color);
     box-shadow: 0 0 12px var(--led-color);
+    animation: blink 2s infinite;
 }
 
 .led.offline {
     --led-color: #616061;
     background: var(--led-color);
     box-shadow: none;
+    animation: blink 2s infinite;
 }
 
 @keyframes blink {
