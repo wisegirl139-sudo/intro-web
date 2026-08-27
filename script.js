@@ -37,6 +37,9 @@ function draw(){
             )
         }
         stream.ud+=stream.speed;
+        if(stream.ud-stream.length*fontSize.height){
+            stream.ud=-stream.length*fontSize;
+        }
     }
     requestAnimationFrame(draw);
 }
