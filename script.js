@@ -3,7 +3,7 @@ const ctx=canvas.getContext("2d");
 let width;
 let height;
 const binary =[];
-const fontSize=16;
+const fontSize=14;
 
 function resizeCanvas(){
     width=canvas.width=window.innerWidth;
@@ -25,12 +25,12 @@ resizeCanvas();
 
 function draw(){
     ctx.clearRect(0,0,width,height);
-    ctx.font='fontSize{px Courier New}';
+    ctx.font='${fontSize}px "Courier New",monospace';
     for (let stream of binary){
         for(let i=0; i,stream.length;i++){
             const ud=stream.ud-i*fontSize;
             ctx.fillText(
-                Math.random()>0.5"0":"1",
+                Math.random()>0.5?"0":"1",
                 stream.x,
                 ud
             )
