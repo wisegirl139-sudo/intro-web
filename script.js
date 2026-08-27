@@ -19,3 +19,21 @@ function resizeCanvas(){
         });
     }
 }
+
+window.addEventListener("resize",resizeCanvas);
+resizeCanvas();
+
+function draw(){
+    ctx.clearRect(0,0,width,height);
+    ctx.font='fontSize{px Courier New}';
+    for (let stream of binary){
+        for(let i=0; i,stream.length;i++){
+            const ud=stream.ud-i*fontSize;
+            ctx.fillText(
+                Math.random()>0.5"0":"1",
+                stream.x,
+                ud
+            )
+        }
+    }
+}
