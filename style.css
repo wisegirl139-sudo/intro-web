@@ -22,30 +22,34 @@ body{
     justify-content: center;
     text-align: center;
     font-family: 'Courier New','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(130, 216, 0);
+    color: azure;
     transform: translateY(50px);
+    -webkit-backdrop-filter: blur(50px);
 }
 
 #hed{
     appearance: none;
-    color: greenyellow;    
+    color: azure;    
     font-family: 'Courier New','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
     transform: translateY(-40px);
+    -webkit-text-stroke: darkseagreen 0.5px;
 }
-#butA{
-    background-color: aliceblue;
+.butA button{
+    background-color: rgba(77, 128, 0, 0.578);
     border-radius: 20px;
-    border: solid 2px greenyellow;
+    border: solid 2px rgb(86, 140, 4);
     gap: 40px;
+    font-family: 'Courier New','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    color: azure;
 }
 
 #page1{
     display: none;
-    color: greenyellow;
+    color: rgb(78, 131, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
