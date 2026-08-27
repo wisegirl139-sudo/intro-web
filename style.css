@@ -11,6 +11,13 @@ body{
     height: 100%;
     z-index: 0;
     pointer-events: none;
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 20%,
+        black 80%,
+        transparent
+    );
 }
 
 #topstuff{
@@ -55,7 +62,7 @@ button:hover{
     text-align: center;
     justify-content: end;
     align-items: center;
-    transform: translateY(120px);
+    transform: translateY(150px);
 }
 
 #page1{
