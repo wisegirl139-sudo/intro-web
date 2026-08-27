@@ -35,5 +35,8 @@ function draw(){
                 ud
             )
         }
+        stream.ud+=stream.speed;
     }
+    requestAnimationFrame(draw);
 }
+draw();
