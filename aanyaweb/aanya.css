@@ -51,3 +51,10 @@ main p{
     padding: 15px 20px;
     margin: 20px;
 }
+.down p{
+    color: #C8CCDA;
+}
+.down[open]{
+    border-color:  #6EA8FF;
+}
+
