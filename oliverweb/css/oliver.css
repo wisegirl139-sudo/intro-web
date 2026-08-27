@@ -262,3 +262,7 @@ nav a:hover {
     max-width: 650px;
     margin-bottom: 18px;
 }
+
+.about_grid p strong {
+    color: var(--text);
+}
