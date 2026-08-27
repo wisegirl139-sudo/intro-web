@@ -1,3 +1,2 @@
-.env
-.env.*
-!.env.example
+oliverweb/.env
+oliverweb/.env.*
