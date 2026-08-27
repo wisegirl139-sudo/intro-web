@@ -3,8 +3,8 @@ const ctx=canvas.getContext("2d");
 let width;
 let height;
 const binary =[];
-const fontSize=20;
-
+const fontSize=25;
+let frameCount=0;
 
 function resizeCanvas(){
     width=canvas.width=window.innerWidth;
@@ -21,6 +21,7 @@ function resizeCanvas(){
     }
 }
 function draw(){
+    frameCount++;
     ctx.clearRect(0,0,width,height);
     ctx.font=`${fontSize}px "Courier New",monospace`;
     for (let stream of binary){
@@ -28,9 +29,11 @@ function draw(){
             const ud=stream.ud-i*fontSize;
             ctx.fillStyle="chartreuse";
             ctx.fillText(
-                Math.random()>0.5?"0":"1",
                 stream.x,
-                ud
+                ud,
+                if frameCount %10===0){
+                    stream.chars[i]=Math.random()>0.5?"0":"1"
+                }
             )
         }
         stream.ud+=stream.speed;
