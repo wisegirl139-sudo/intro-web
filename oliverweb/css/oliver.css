@@ -98,21 +98,27 @@ body {
     flex-shrink: 0;
 }
 
-.hammer {
-    position: absolute;
-    z-index: 2;
-    left: -4px;
-    top: 0;
-    width: 3px;
-    height: 15px;
-    background: var(--text);
-    transform-origin: 50% 100%;
-    transform: rotate(35deg);
-    animation: 
-        hammerStrike
-        1.25s
-        infinite
-        ease-in-out;
+.hammer { 
+    position: absolute; 
+    z-index: 2; 
+    left: -4px; 
+    top: 0; 
+    width: 3px; 
+    height: 15px; 
+    background: var(--text); 
+    transform-origin: 50% 100%; 
+    transform: rotate(35deg); 
+} 
+
+.hammer.online { 
+    animation: hammerStrike 2.5s ease-in-out infinite; 
+} 
+.hammer.away { 
+    animation: hammerStrike 10s ease-in-out infinite; 
+}
+.hammer.offline { 
+    animation: none; 
+    transform: rotate(35deg); 
 }
 
 .hammer::before {
@@ -151,12 +157,18 @@ body {
     background: var(--green);
     opacity: 0;
     transform-origin: bottom center;
-    animation:
-        sparks
-        1.25s
-        infinite
-        ease-out;
 }
+
+.spark.online { 
+    animation: sparks 2.5s infinite ease-out;
+} 
+.spark.away { 
+    animation: sparks 10s ease-in-out infinite; 
+}
+.spark.offline { 
+    animation: none;
+}
+
 
 .spark_one {
     --spark-x: -5px;
