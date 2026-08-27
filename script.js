@@ -29,6 +29,7 @@ function draw(){
     for (let stream of binary){
         for(let i=0; i<stream.length;i++){
             const ud=stream.ud-i*fontSize;
+            ctx.fillStyle="chartreuse";
             ctx.fillText(
                 Math.random()>0.5?"0":"1",
                 stream.x,
@@ -40,3 +41,4 @@ function draw(){
     requestAnimationFrame(draw);
 }
 draw();
+
