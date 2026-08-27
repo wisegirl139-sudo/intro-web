@@ -14,7 +14,7 @@ function resizeCanvas(){
         binary.push({
             x:i*fontSize,
             ud:Math.random()*height,
-            speed:1+Math.random()*2,
+            speed:1+Math.random()*3,
             length:5+Math.floor(Math.random()*15)
         });
     }
@@ -37,7 +37,7 @@ function draw(){
             )
         }
         stream.ud+=stream.speed;
-        if(stream.ud-stream.length*fontSize.height){
+        if(stream.ud>height+stream.length*fontSize.height){
             stream.ud=-stream.length*fontSize;
         }
     }
