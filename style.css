@@ -1,12 +1,9 @@
 body{
-    background-color: black;
+    background-color: black ;
     margin: 0;
     padding: 0;
     color: rgb(250, 249, 249);
-    position: relative;
-    isolation: isolate;
 }
-
 #hack{
     position: fixed;
     inset: 0;
@@ -15,10 +12,7 @@ body{
     z-index: 0;
     pointer-events: none;
 }
-main{
-    position: relative;
-    z-index: 1;
-}
+
 #topstuff{
     padding: 15px;
     min-height: 50vh;
@@ -30,8 +24,6 @@ main{
     font-family: 'Courier New','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(130, 216, 0);
     transform: translateY(50px);
-    position: relative;
-    z-index: 1;
 }
 
 #hed{
@@ -44,11 +36,11 @@ main{
     flex-direction: column;
     transform: translateY(-40px);
 }
-.butA{
+#butA{
     background-color: aliceblue;
     border-radius: 20px;
     border: solid 2px greenyellow;
-    gap: 20px;
+    gap: 40px;
 }
 
 #page1{
