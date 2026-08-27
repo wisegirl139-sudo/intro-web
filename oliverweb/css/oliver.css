@@ -12,13 +12,14 @@
     --shadow: #080a09;
 }
 
-
 body {
     background: var(--bg);
     color: var(--text);
     font-family: "JetBrains Mono", monospace;
     line-height: 1.7;
 }
+
+/* SCAN ANIMATION */
 
 .scanLines {
     position: fixed;
@@ -56,6 +57,8 @@ body {
     }
 }
 
+/* NAVIGATION BAR */
+
 .topbar {
     height: 70px;
     border-bottom: 1px solid var(--border);
@@ -74,6 +77,16 @@ body {
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 1px;
+}
+
+.logo a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.logo a:hover{
+    color: var(--green);
+
 }
 
 .led {
@@ -109,6 +122,7 @@ nav a:hover {
     color: var(--green);
 }
 
+/* INRO SECTION */
 
 .intro {
     min-height: 700px;
@@ -205,4 +219,46 @@ nav a:hover {
     color: var(--text);
     margin-bottom: 18px;
     padding-left: 15px;
+}
+
+/* GENERAL SECTION STUFF */
+
+.section {
+    padding: 110px 6%;
+    border-bottom: 1px solid var(--border);
+}
+
+.section_title {
+    color: var(--green);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 70px;
+}
+
+.section_title span {
+    color: var(--muted);
+    margin-right: 15px;
+}
+
+/* ABOUT SECTION */
+
+.about_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.about_grid h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 35px;
+}
+
+.about_grid p {
+    color: var(--muted);
+    max-width: 650px;
+    margin-bottom: 18px;
 }
