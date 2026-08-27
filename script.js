@@ -34,7 +34,7 @@ function draw(){
             )
         }
         stream.ud+=stream.speed;
-        if(stream.ud>height+stream.length*fontSize.height){
+        if(stream.ud>height+stream.length*fontSize){
             console.log("reset")
             stream.ud=-stream.length*fontSize;
         }
