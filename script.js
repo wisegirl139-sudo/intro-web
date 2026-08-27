@@ -16,7 +16,8 @@ function resizeCanvas(){
             x:i*fontSize,
             ud:Math.random()*height,
             speed:2+Math.random()*3,
-            length:5+Math.floor(Math.random()*15)
+            length:5+Math.floor(Math.random()*15),
+            chars:[]
         });
     }
 }
@@ -29,12 +30,13 @@ function draw(){
             const ud=stream.ud-i*fontSize;
             ctx.fillStyle="chartreuse";
             ctx.fillText(
-                stream.x,
-                ud,
-                if frameCount %10===0){
-                    stream.chars[i]=Math.random()>0.5?"0":"1"
-                }
-            )
+            stream.chars[i],
+            stream.x,
+            ud,
+            )            
+            if (frameCount %10===0){
+                stream.chars[i]=Math.random()>0.5?"0":"1"
+            } 
         }
         stream.ud+=stream.speed;
         if(stream.ud>height+stream.length*fontSize){
