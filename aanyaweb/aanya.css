@@ -33,7 +33,7 @@ main{
 }
 
 main h5{
-    color: #6EA8FF;
+    color: #9B8CFF;
     font-size: 25px;
     margin-bottom: 5px;
 }
@@ -50,11 +50,35 @@ main p{
     border-radius: 50px;
     padding: 15px 20px;
     margin: 20px;
+    border-width: 1px;
 }
 .down p{
     color: #C8CCDA;
 }
 .down[open]{
-    border-color:  #6EA8FF;
+    border-color:  #9B8CFF;
 }
+
+.card{
+    margin-top: 70px;
+}
+
+.gal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.gali{
+    background-color: #0D1020;
+    border-color: #292D48;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    padding: 10px;
+    width: 250px;
+}
+
+.gali
 
