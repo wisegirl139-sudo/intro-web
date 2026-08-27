@@ -19,6 +19,12 @@ function resizeCanvas(){
             length:5+Math.floor(Math.random()*15),
             chars:[]
         });
+        const stream=binary[binary.length-1];
+        for(let j=0;j<stream.length;j++){
+            stream.chars.push(
+                Math.random()>0.5?"0":"1"
+            );
+        }
     }
 }
 function draw(){
