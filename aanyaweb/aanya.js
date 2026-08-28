@@ -16,4 +16,10 @@ const bd= new Date("2009-05-15T18:30:00");
 function updateAge(){
     const now = new Date();
     const diff=now-bd;
-    const sec
+    const sec=Math.floor(difference/1000)%60;
+    const min=Math.floor(difference/(1000*60))%60;
+    const hr=Math.floor(difference/(1000*60*60))%24;
+    const day=Math.floor(difference/(1000*60*60*24))%24;
+    const mth=Math.floor(days%365.25)/30:
+    const yr=Math.floor(days/365.25):
+
