@@ -15,12 +15,14 @@ const bd= new Date("2009-05-15T18:30:00");
 const age=document.getElementById("age");
 function updateAge(){
     const now = new Date();
-    const diff=now-bd;
+    const difference=now-bd;
     const sec=Math.floor(difference/1000)%60;
     const min=Math.floor(difference/(1000*60))%60;
     const hr=Math.floor(difference/(1000*60*60))%24;
-    const day=Math.floor(difference/(1000*60*60*24))%24;
-    const mth=Math.floor(days%365.25)/30;
-    const yr=Math.floor(days/365.25);
+    const day=Math.floor(difference/(1000*60*60*24));
+    const mth=Math.floor(day%365.25)/30;
+    const yr=Math.floor(day/365.25);
+    age.textContent=`I am ${yr} years, ${mth} months, ${day % 30} days, ${hr} hours, ${min} minutes and ${sec} seconds and counting`;
 }
-age.textContent=`I am ${yr} years, ${mth} months, ${day % 30} days, ${hr} hours, ${min} minutes and ${sec} seconds and counting`;
+updateAge();
+setInterval(updateAge,1000);
