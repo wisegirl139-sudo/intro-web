@@ -427,6 +427,12 @@ nav a:hover {
     border: 1px solid var(--border);
     background: var(--panel);
     margin-bottom: 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.featured_project:hover {
+    transform: translate(-2px, -5px);
+    border-color: var(--green_dark);
 }
 
 .project_image {
@@ -536,9 +542,90 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-/* .card_content a {
-    color: var(--green);
-    text-decoration: none;
-    font-size: 0.7rem;
-    border: 1px solid var(--border);
-} */
+footer {
+    min-height: 100px;
+    padding: 30px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: var(--muted);
+    font-size: 0.65rem;
+}
+
+/* Display scale */
+
+@media (max-width: 850px) {
+
+    .topbar {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 80px 5%;
+        gap: 50px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .section {
+        padding: 80px 5%;
+    }
+
+    .about-grid,
+    .featured-project,
+    .workbench {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        min-height: 300px;
+    }
+
+    .project-info {
+        padding: 30px;
+    }
+
+    .workbench-photo {
+        height: 300px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 3.2rem;
+        letter-spacing: -3px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .terminal {
+        padding: 18px;
+        font-size: 0.65rem;
+    }
+
+    .tool-list {
+        grid-template-columns: 1fr;
+    }
+}
