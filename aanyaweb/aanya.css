@@ -114,3 +114,21 @@ main p{
 .gali:hover{
     border-width: 5px;
 }
+
+.star{
+    position: fixed;
+    width: 25px;
+    z-index: 0;
+    animation: shoot linear infinite;
+}
+
+@keyframes shoot{
+    from{
+        transform: translate(0,0);
+        opacity: 1;
+    }
+    to{
+        transform: translate(110vw,20vh);
+        opacity: 0;
+    }
+}
