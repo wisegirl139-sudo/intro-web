@@ -89,6 +89,138 @@ body {
 
 }
 
+.hammer_anvil {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 22px;
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+
+.hammer {
+    position: absolute;
+    z-index: 2;
+    left: -4px;
+    top: 0;
+    width: 3px;
+    height: 15px;
+    background: var(--text);
+    transform-origin: 50% 100%;
+    transform: rotate(35deg);
+    animation: 
+        hammerStrike
+        1.25s
+        infinite
+        ease-in-out;
+}
+
+.hammer::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: -2px;
+    width: 10px;
+    height: 5px;
+    background: var(--text);
+    border-radius: 1px;
+}
+
+.anvil {
+    position: absolute;
+    left: 3px;
+    bottom: -4px;
+    width: 19px;
+    height: 5px;
+    background: var(--muted);
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        88% 100%,
+        12% 100%
+    );
+}
+
+.spark {
+    position: absolute;
+    z-index: 3;
+    left: 12px;
+    top: 14px;
+    width: 2px;
+    height: 5px;
+    background: var(--green);
+    opacity: 0;
+    transform-origin: bottom center;
+    animation:
+        sparks
+        1.25s
+        infinite
+        ease-out;
+}
+
+.spark_one {
+    --spark-x: -5px;
+    --spark-y: -6px;
+    transform: rotate(-45deg);
+}
+
+.spark_two {
+    --spark-x: 0px;
+    --spark-y: -8px;
+    transform: rotate(0deg);
+    animation-delay: 0.02s;
+}
+
+.spark_three {
+    --spark-x: 5px;
+    --spark-y: -6px;
+    transform: rotate(45deg);
+    animation-delay: 0.04s;
+}
+
+@keyframes hammerStrike {
+    0%, 25% {
+        transform: rotate(35deg);
+    }
+    42% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(92deg);
+    }
+    56% {
+        transform: rotate(90deg);
+    }
+    70%, 100% {
+        transform: rotate(35deg);
+    }
+}
+
+@keyframes sparks {
+    0%, 45% {
+        opacity: 0;
+        transform:
+            translate(0, 0)
+            rotate(var(--spark-angle, 0deg))
+            scale(0.5);
+    }
+    52% {
+        opacity: 1;
+    }
+    68% {
+
+        opacity: 0;
+
+        transform:
+            translate(var(--spark-x), var(--spark-y))
+            rotate(var(--spark-angle, 0deg))
+            scale(1);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 .led {
     display:  inline-block;
     width: 8px;
@@ -265,4 +397,235 @@ nav a:hover {
 
 .about_grid p strong {
     color: var(--text);
+}
+
+.spec_card {
+    border: 1px solid var(--border);
+    background: var(--panel);
+}
+
+.spec_row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.75rem;
+}
+
+.spec_row:last-child {
+    border-bottom: none;
+}
+
+.spec_row span {
+    color: var(--muted);
+}
+
+.featured_project {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.featured_project:hover {
+    transform: translate(-2px, -5px);
+    border-color: var(--green_dark);
+}
+
+.project_image {
+    min-height: 450px;
+    position: relative;
+    background: #080a09;
+    overflow: hidden;
+}
+
+.project_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image_label {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    padding: 7px 10px;
+    background: #0b0e0cee;
+    border: 1px solid var(--border);
+    color: var(--green);
+    font-size: 0.65rem;
+}
+
+.project_info {
+    padding: 50px;
+}
+
+.project_number,
+.project_id {
+    color: var(--green);
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+}
+
+.project_info h2 {
+    font-size: 2rem;
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.project_info p {
+    color: var(--muted);
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 30px 0;
+}
+
+.tags span {
+    border: 1px solid var(--border);
+    padding: 5px 9px;
+    color: var(--muted);
+    font-size: 0.62rem;
+}
+
+.project_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project_card {
+    border: 1px solid var(--border);
+    background: var(--panel);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project_card:hover {
+    transform: translate(-2px, -5px);
+    border-color: var(--green_dark);
+}
+
+.card_image {
+    height: 230px;
+    background: #080a09;
+    overflow: hidden;
+}
+
+.card_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card_content {
+    padding: 25px;
+}
+
+.card_content h3 {
+    margin: 8px 0 12px;
+    font-size: 0.78rem;
+}
+
+.card_content p {
+    color: var(--muted);
+    font-size: 0.75rem;
+    margin-bottom: 20px;
+}
+
+footer {
+    min-height: 100px;
+    padding: 30px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: var(--muted);
+    font-size: 0.65rem;
+}
+
+/* Display scale */
+
+@media (max-width: 850px) {
+
+    .topbar {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 80px 5%;
+        gap: 50px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .section {
+        padding: 80px 5%;
+    }
+
+    .about-grid,
+    .featured-project,
+    .workbench {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        min-height: 300px;
+    }
+
+    .project-info {
+        padding: 30px;
+    }
+
+    .workbench-photo {
+        height: 300px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 3.2rem;
+        letter-spacing: -3px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .terminal {
+        padding: 18px;
+        font-size: 0.65rem;
+    }
+
+    .tool-list {
+        grid-template-columns: 1fr;
+    }
 }
