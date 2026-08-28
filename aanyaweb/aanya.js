@@ -10,3 +10,10 @@ for(let i = 0;i<8;i++){
     star.style.animationDuration=(3+Math.random()*2)+"s";
     document.body.appendChild(star);
 }
+
+const bd= new Date("2009-05-15T18:30:00");
+
+function updateAge(){
+    const now = new Date();
+    const diff=now-bd;
+    const sec
