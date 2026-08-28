@@ -75,7 +75,7 @@ main p{
 }
 
 .gali{
-    background-color: #0D1020;
+    background-color: #0d102078;
     border-color: #9B8CFF;
     border-style: solid;
     border-width: 1px;
@@ -118,14 +118,32 @@ main p{
 .star{
     position: fixed;
     width: 55px;
-    z-index: 0;
+    height: 55px;
+    z-index: -1;
+    opacity: 0.7;
     animation: shoot linear infinite;
+}
+.star img{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+.star::before{
+    content: "";
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    width: 140px;
+    height: 15px;
+    transform: translateY(-50%);
+    background: linear-gradient(to left, #f4af5b, transparent);
+    filter: blur(6px);
 }
 
 @keyframes shoot{
     from{
         transform: translate(0,0);
-        opacity: 1;
+        opacity: 0.7;
     }
     to{
         transform: translate(110vw,20vh);
