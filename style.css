@@ -51,6 +51,7 @@ body{
     gap: 60px;
     font-family: 'Courier New','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
     color: azure;
+    font-size:20px;
 }
 
 button:hover{
